@@ -16,7 +16,7 @@ export default function Game() {
         />
       </div>
       <div>
-        <Info history={history} />
+        <Info history={history} setStep={setStep} />
       </div>
     </div>
   );

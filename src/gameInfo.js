@@ -1,8 +1,13 @@
-export default function ({ history }) {
-  let records = history.map((h) => {
+export default function ({ history, setStep }) {
+  function handleClick(i) {
+    setStep(i);
+  }
+  let records = history.map((h, i) => {
     return (
       <li>
-        <button>{h.to ? "Move to #" + h.to : "Game start"}</button>
+        <button onClick={() => handleClick(i)}>
+          {h.to ? "Move to #" + h.to : "Game start"}
+        </button>
       </li>
     );
   });
