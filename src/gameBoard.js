@@ -1,32 +1,30 @@
 import Square from "./gameSquare";
 import Status from "./gameStatus";
-function Board() {
-  const { player, to, squares } = history.slice(-1);
-  let status, records;
-  let winner = caculateWinner();
-  if (winner) {
-    status = "Winner: " + winner;
-    records = history.slice().push({ player, to: "end", squares });
-  } else {
-    status = "Next player: " + player;
-  }
+
+export default function Board({ history, setHistory, step }) {
+  const { player, to, squares } = history[step];
+  // let winner = caculateWinner();
+  // if (winner) {
+  //   records = history.slice().push({ player, to: "end", squares });
+  //   setHistory(records);
+  // }
   return (
     <>
-      <Status />
+      <Status history={history} />
       <div className="board-row">
-        <Square index="0" />
-        <Square index="1" />
-        <Square index="2" />
+        <Square history={history} index="0" />
+        <Square history={history} index="1" />
+        <Square history={history} index="2" />
       </div>
       <div className="board-row">
-        <Square index="3" />
-        <Square index="4" />
-        <Square index="5" />
+        <Square history={history} index="3" />
+        <Square history={history} index="4" />
+        <Square history={history} index="5" />
       </div>
       <div className="board-row">
-        <Square index="6" />
-        <Square index="7" />
-        <Square index="8" />
+        <Square history={history} index="6" />
+        <Square history={history} index="7" />
+        <Square history={history} index="8" />
       </div>
     </>
   );
