@@ -4,7 +4,7 @@ import Info from "./gameInfo";
 
 export default function Game() {
   const [history, setHistory] = useState([
-    { player: "X", to: null, squares: Array(9).fill(null) },
+    { player: "O", to: null, squares: Array(9).fill(null) },
   ]);
   const [step, setStep] = useState(0);
   return (
