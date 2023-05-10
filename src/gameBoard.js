@@ -3,11 +3,6 @@ import Status from "./gameStatus";
 
 export default function Board({ history, setHistory, step, setStep }) {
   const { player, to, squares } = history[step];
-  // let winner = caculateWinner();
-  // if (winner) {
-  //   records = history.slice().push({ player, to: "end", squares });
-  //   setHistory(records);
-  // }
   return (
     <>
       <Status history={history} step={step} />
